@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  docker:
+    image: docker
+    volumes:
+      - ../Python:/code
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: python /code/main.py
