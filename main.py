@@ -14,9 +14,6 @@ AUTH = tweepy.OAuthHandler(consumer_key=CONSUMER_KEY, consumer_secret=CONSUMER_S
 AUTH.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 API = tweepy.API(auth_handler=AUTH, retry_count=3)
 
-def fetch_mentions(api):
-    """Fetch mentions from twitter"""
-    return api.mentions_timeline()
 
 
 def fav_tweet(api, reply):
