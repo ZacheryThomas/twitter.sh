@@ -56,6 +56,17 @@ def run_command(container, cmd):
 
 
 def response_formatter(text, username, max_length=140):
+    """
+    Formats response to be below ``max_length`` characters long.
+
+    Args:
+        text (str): text to return
+        username (str): username to @. @<username> is tacked on to end of tweet
+        max_lenght (int): max length of tweet. Default: ``140``
+
+    Returns:
+        (str): the tweet text
+    """
     while len('{} @{}'.format(text, username)) > max_length:
         text = text[:-1]
 
