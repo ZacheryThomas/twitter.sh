@@ -32,7 +32,7 @@ def fav_tweet(api, reply):
     return True
 
 
-def clean_tweet_text(tweet):
+def remove_usernames(tweet):
     """Removes user mentions from tweet"""
     tweet_text = tweet.text
 
@@ -79,7 +79,7 @@ class WorkerThread (threading.Thread):
 
         user_id = str(self.tweet.user.id)
         username = str(self.tweet.user.screen_name)
-        tweet_text = clean_tweet_text(self.tweet)
+        tweet_text = remove_usernames(self.tweet)
 
         print('text: {}'.format(tweet_text))
         print('container name: {}'.format(user_id))
